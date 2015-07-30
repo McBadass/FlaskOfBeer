@@ -12,20 +12,20 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DB_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'postgresql://postgres:bathersxPcWtYa39HqgQMNyt5Y3@192.168.1.103:5432/FOBDev'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
+        'postgresql://postgres:bathersxPcWtYa39HqgQMNyt5Y3@192.168.1.103:5432/fobdev'
 
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DB_URI = os.environ.get('TEST_DATABASE_URL') or \
-        'postgresql://postgres:bathersxPcWtYa39HqgQMNyt5Y3@192.168.1.103:5432/FOBTest'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
+        'postgresql://postgres:bathersxPcWtYa39HqgQMNyt5Y3@192.168.1.103:5432/fobtest'
     # Not sure if this is needed below
     WTF_CSRF_ENABLED = False
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DB_URI = os.environ.get('PROD_DATABASE_URL') or \
-        'postgresql://postgres:bathersxPcWtYa39HqgQMNyt5Y3@192.168.1.103:5432/FOBProd'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('PROD_DATABASE_URL') or \
+        'postgresql://postgres:bathersxPcWtYa39HqgQMNyt5Y3@192.168.1.103:5432/fobrod'
 
     @classmethod
     def init_app(cls, app):
