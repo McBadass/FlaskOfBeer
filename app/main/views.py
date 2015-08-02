@@ -3,8 +3,9 @@ from .. import db
 from ..models import TempSensor, SensorData
 from . import main
 from .forms import SensorCreate
+from .. import temperature
 
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', temp=temperature.read_temp_f())

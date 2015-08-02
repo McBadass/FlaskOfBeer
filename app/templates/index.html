@@ -12,12 +12,26 @@
             </div>
         <div class="one-third column">
             <h4>Welcome!</h4>
-            <p>You will soon be able to see the temperature here!</p>
+            <p>The current temperature is:</p>
+            </br>
+            <div id="gauge" class="200x160px"></div>
         </div>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
-<!-- Scripts will show up here eventually -->
+<script>
+    var g5 = new JustGage({
+    id: "gauge",
+    value: '{{ temp }}',
+    min: 50,
+    max: 100,
+    title: "Raspi Temp",
+    label: "",
+    levelColorsGradient: false,
+    valueFontColor: "gray",
+    refreshAnimationTime: 15
+  });
+</script>
 {% endblock %}
