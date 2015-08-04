@@ -8,4 +8,4 @@ from .. import temperature
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', temp=temperature.read_temp_f())
+    return render_template('index.html')
